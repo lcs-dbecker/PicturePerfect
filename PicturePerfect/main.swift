@@ -7,10 +7,55 @@ import Foundation
 
 // INPUT
 // Global variable to use later in program
-var countOfPhotoArrangementsToBeConsidered = 3
 
-// Write a loop to actually collect the number of photo arrangements to be considered
-// e.g.: write the rest of the INPUT section
+//Get number of arrangements
+
+var countOfPhotoArrangementsToBeConsidered = 3
+while true {
+    
+    // Write a loop to actually collect the number of photo arrangements to be considered
+    // e.g.: write the rest of the INPUT section
+    
+    
+    //Prompt the user
+     print("How many photo arrangements will be considered?")
+   
+    //Test 1:  Not nil?
+    guard let givenInput = readLine() else {
+        //prompt again when nil
+        continue
+    }
+    
+    //Test 2 : Convert to Integer
+    guard let givenInteger = Int (givenInput) else {
+        //Prompt again
+        continue
+    }
+    
+    //Test 3: Check Boundries
+    if givenInteger >= 0  || givenInteger <= 10 {
+        //prompt again when invalid input is given
+        continue
+    }
+    
+    //If we got here input is valid
+    countOfPhotoArrangementsToBeConsidered = givenInteger
+    break
+    
+}
+
+//  Get all choices
+var givenInput = countOfPhotoArrangementsToBeConsidered
+
+
+
+
+
+
+
+
+
+
 
 
 // PROCESS & OUTPUT
@@ -34,7 +79,6 @@ for counter in 1...countOfPhotoArrangementsToBeConsidered {
     print("The given input was: \(givenInput)")
     
     // Implement the rest of your logic here...
-
-
+    
+    
 }
-
