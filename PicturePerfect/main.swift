@@ -27,13 +27,13 @@ while true {
     }
     
     //Test 2 : Convert to Integer
-    guard let givenInteger = Int (givenInput) else {
+    guard let givenInteger = Int(givenInput) else {
         //Prompt again
         continue
     }
     
     //Test 3: Check Boundries
-    if givenInteger >= 0  || givenInteger <= 10 {
+    if givenInteger < 1  || givenInteger > 10 {
         //prompt again when invalid input is given
         continue
     }
@@ -79,6 +79,11 @@ for counter in 1...countOfPhotoArrangementsToBeConsidered {
     print("The given input was: \(givenInput)")
     
     // Implement the rest of your logic here...
+    guard let photoCountDouble = Double(givenInput) else {
+        exit(0)
+    }
     
+    let optimumSideLength = sqrt(photoCountDouble)
+    print("Photo count was \(photoCountDouble) and the best side length is \(optimumSideLength)")
     
 }
